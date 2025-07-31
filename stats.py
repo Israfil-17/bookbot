@@ -17,14 +17,11 @@ def ch_count():
             dict[lower] = 1
         else:
             dict[lower] += 1
-        
-    print(dict)
+    return dict
 
+def sort_on(dict):
+    return dict["num"]
 
-
-#Loop through each character in the text string
-#Convert each character to lowercase using .lower()
-#For each character, either:
-#Add it to the dictionary with a count of 1 (if it's the first time you've seen it)
-#Increment its count by 1 (if you've seen it before)
-    
+def list_dicts():
+    dict_list = []
+    for 
