@@ -10,18 +10,30 @@ def word_num():
 
 def ch_count():
     words = get_book_text("books/frankenstein.txt")
-    dict = {}
+    char_dict = {}
     for c in words:
         lower = c.lower()
-        if lower not in dict:
-            dict[lower] = 1
+        if lower not in char_dict:
+            char_dict[lower] = 1
         else:
-            dict[lower] += 1
-    return dict
+            char_dict[lower] += 1
+    return char_dict
 
-def sort_on(dict):
-    return dict["num"]
+def sort_on(item):
+    return item["num"]
 
 def list_dicts():
     dict_list = []
-    for 
+    for item in char_dict:
+        rep = char_dict[item]
+        new_dict = {}
+        new_dict["char"] = item
+        new_dict["num"] = rep
+        dict_list.append(new_dict)
+    
+    dict_list.sort(reverse=True, key=sort_on)
+    print(dict_list)
+
+
+        
+
