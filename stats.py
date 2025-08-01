@@ -17,12 +17,7 @@ def ch_count():
             char_dict[lower] = 1
         else:
             char_dict[lower] += 1
-    return char_dict
-
-def sort_on(item):
-    return item["num"]
-
-def list_dicts():
+    print(char_dict)
     dict_list = []
     for item in char_dict:
         rep = char_dict[item]
@@ -30,9 +25,14 @@ def list_dicts():
         new_dict["char"] = item
         new_dict["num"] = rep
         dict_list.append(new_dict)
-    
+        def sort_on(item):
+            return item["num"]
+
     dict_list.sort(reverse=True, key=sort_on)
     print(dict_list)
+
+
+    
 
 
         
