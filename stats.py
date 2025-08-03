@@ -6,7 +6,9 @@ def get_book_text(path_to_file):
 def word_num():
     words = get_book_text("books/frankenstein.txt").split()
     word_count = len(words)
-    print(f"{word_count} words found in the document")
+    print(f"Found {word_count} total words")
+    return print(f"Found {word_count} total words")
+    
 
 def ch_count():
     words = get_book_text("books/frankenstein.txt")
@@ -17,7 +19,6 @@ def ch_count():
             char_dict[lower] = 1
         else:
             char_dict[lower] += 1
-    print(char_dict)
     dict_list = []
     for item in char_dict:
         rep = char_dict[item]
@@ -29,7 +30,20 @@ def ch_count():
             return item["num"]
 
     dict_list.sort(reverse=True, key=sort_on)
-    print(dict_list)
+    
+    result = []
+    for value in range(0, len(dict_list)):
+        char = dict_list[value]["char"]
+        num = dict_list[value]["num"]
+        if char.isalpha():
+            result.append(f"{char}: {num}")
+            print(f"{char}: {num}")
+    
+    return result
+
+
+    
+
 
 
     
