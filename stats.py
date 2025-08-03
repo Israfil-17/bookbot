@@ -3,15 +3,15 @@ def get_book_text(path_to_file):
         file_content = text.read()
         return file_content
 
-def word_num():
-    words = get_book_text("books/frankenstein.txt").split()
+def word_num(path_to_file):
+    words = get_book_text(path_to_file).split()
     word_count = len(words)
-    print(f"Found {word_count} total words")
+    
     return print(f"Found {word_count} total words")
     
 
-def ch_count():
-    words = get_book_text("books/frankenstein.txt")
+def ch_count(path_to_file):
+    words = get_book_text(path_to_file)
     char_dict = {}
     for c in words:
         lower = c.lower()
